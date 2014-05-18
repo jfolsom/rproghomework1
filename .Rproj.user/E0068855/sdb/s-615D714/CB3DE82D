@@ -1,14 +1,14 @@
 {
-    "contents" : "",
+    "contents" : "complete <- function(directory, id = 1:332) {\n  # Returns the mean sulfate reading for a\n  files.long <- list.files(directory, full.names = TRUE)  \n  files.column <- data.frame(id)\n  cases.column <- data.frame()\n  for(i in id) {\n    # Create a data frame column listing the number of complete cases\n    mon.data <- read.csv(files.long[i])\n    number.complete <- sum(complete.cases(mon.data))\n    cases.column <- rbind(cases.column, number.complete)\n  } \n  complete.data <- cbind(files.column, cases.column)\n  colnames(complete.data) <- c(\"id\", \"nobs\")\n  complete.data\n}",
     "created" : 1400442499755.000,
     "dirty" : false,
-    "encoding" : "",
+    "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "2329855365",
     "id" : "CB3DE82D",
-    "lastKnownWriteTime" : 309922672,
-    "path" : null,
-    "project_path" : null,
+    "lastKnownWriteTime" : 1400444676,
+    "path" : "C:/rprogramming/rproghomework1/complete.R",
+    "project_path" : "complete.R",
     "properties" : {
         "tempName" : "Untitled1"
     },

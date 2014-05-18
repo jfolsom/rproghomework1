@@ -1,4 +1,4 @@
-pollutantmean <- function(directory, pollutant, id) {
+pollutantmean <- function(directory, pollutant, id = 1:332) {
   # Returns the mean sulfate reading for a
   file.list <- list.files(directory, full.names = TRUE)  
   pol.data <- data.frame()
