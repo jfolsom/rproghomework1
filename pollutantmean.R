@@ -1,12 +1,13 @@
-pollutantmean <- function(directory, id) {
+pollutantmean <- function(directory, pollutant, id) {
   # Returns the mean sulfate reading for a
-  FileList <- list.files(directory, full.names = TRUE)  
-  PolData <- data.frame()
+  file.list <- list.files(directory, full.names = TRUE)  
+  pol.data <- data.frame()
   for(i in id) {
     # Puts the data from all files from the id list in one data frame
-    PolData <- rbind(PolData, read.csv(FileList[i]))
+    pol.data <- rbind(pol.data, read.csv(file.list[i]))
   } 
-  MeanSulfate <- mean(PolData$sulfate, na.rm = TRUE)
+  mean.pollutant <- mean(pol.data[, pollutant], na.rm = TRUE)
   # Calculate mean while stripping NAs
-  MeanSulfate
+  mean.pollutant <- round(mean.pollutant, 3)
+  mean.pollutant
 }
