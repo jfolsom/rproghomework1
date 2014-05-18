@@ -1,12 +1,12 @@
 {
-    "contents" : "pollutantmean <- function(directory, date) {\n  # Returns the mean sulfate reading for a given date from the files in the\n  # directory.  Currently set to only read the first 5 files.\n  FileList <- list.files(directory, full.names = TRUE)\n  # NumberFiles <- length(FileList)\n  PolData <- data.frame()\n  for(i in 1:5) {\n    # Puts the data from all files in the directory into one data frame\n    PolData <- rbind(PolData, read.csv(FileList[i]))\n  } \n  DateData <- PolData[PolData[, \"Date\"] == date, ]  # The data for that date\n  MeanSulfateDate <- mean(DateData$sulfate, na.rm = TRUE)\n  # Calculate mean while stripping NAs\n  MeanSulfateDate\n}",
+    "contents" : "pollutantmean <- function(directory, id) {\n  # Returns the mean sulfate reading for a\n  FileList <- list.files(directory, full.names = TRUE)  \n  PolData <- data.frame()\n  for(i in id) {\n    # Puts the data from all files from the id list in one data frame\n    PolData <- rbind(PolData, read.csv(FileList[i]))\n  } \n  MeanSulfate <- mean(PolData$sulfate, na.rm = TRUE)\n  # Calculate mean while stripping NAs\n  MeanSulfate\n}",
     "created" : 1400434993756.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "127647362",
+    "hash" : "1558095324",
     "id" : "5D86DCA9",
-    "lastKnownWriteTime" : 1400438841,
+    "lastKnownWriteTime" : 1400441687,
     "path" : "C:/rprogramming/rproghomework1/pollutantmean.R",
     "project_path" : "pollutantmean.R",
     "properties" : {
