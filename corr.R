@@ -17,8 +17,8 @@ corr <- function(directory, threshold = 0) {
     Number.Complete <- sum(complete.cases(Monitor.Data))
     if(Number.Complete >= threshold) {
       Correlation <- cor(Monitor.Data$sulfate, Monitor.Data$nitrate,
-                         use = "na.or.complete")
-      Corr.Vector <- c(Corr.Vector, round(Correlation, 5))
+                         use = "pairwise.complete.obs")
+      Corr.Vector <- c(Corr.Vector, Correlation)
     }
   }
   Corr.Vector <- Corr.Vector[!is.na(Corr.Vector)] 
