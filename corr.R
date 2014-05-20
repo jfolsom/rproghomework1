@@ -20,6 +20,7 @@ corr <- function(directory, threshold = 0) {
                          use = "na.or.complete")
       Corr.Vector <- c(Corr.Vector, round(Correlation, 5))
     }
-  } 
+  }
+  Corr.Vector <- Corr.Vector[!is.na(Corr.Vector)] 
   Corr.Vector
 }
